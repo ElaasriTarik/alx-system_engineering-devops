@@ -1,0 +1,2 @@
+#!/bin/bash
+bestchol=$(((10#$WATER) + (10#STIR)))
