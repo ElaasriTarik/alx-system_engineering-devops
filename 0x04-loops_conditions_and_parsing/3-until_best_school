@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# display best school using until
+c=0
+until [ $c -eq 10 ]; do
+      echo "Best School"
+      ((c += 1))
+done
