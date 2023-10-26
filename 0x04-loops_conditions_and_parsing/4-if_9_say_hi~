@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# if 9 print hi
+c=0
+while [ $c -lt 10 ]; do
+      if [ $c -eq 9 ];
+      then
+	  echo "hi"
+      else
+	  echo "Best School"
+      ((c += 1))
+      fi
+done
