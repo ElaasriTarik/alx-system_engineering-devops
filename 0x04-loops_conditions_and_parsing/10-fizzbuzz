@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# fizzbuzz
+c=1
+while [ $c -le 100 ]; do
+    if (( c % 3 == 0 )); then
+	echo "Fizz"
+    elif (( c % 5 == 0 )); then
+	echo "Buzz"
+    elif ((c % 3 == 0)) && ((c % 5 == 0)); then
+	echo "FizzBuzz"
+    else
+	echo $c
+    fi
+    ((c += 1))
+done
