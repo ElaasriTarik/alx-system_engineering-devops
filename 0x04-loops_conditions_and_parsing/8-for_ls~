@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#display current dir files using for loop
+
+for file in [^-]*; do
+    if [[ $file == *-* ]]; then
+        part_after_dash="${file#*-}"
+        echo "$part_after_dash"
+    else
+        echo "$file"
+    fi
+done
