@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # show all processes
-ps aux
+
+top
