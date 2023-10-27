@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# all together
+
+sigterm_() {
+    echo "I hate the kill command"
+}
+
+sigint_() {
+    echo "Y U no love me?!"
+}
+
+term() {
+  rm /var/run/myscript.pid
+  exit
+}
+
+echo "$$" > /var/run/myscript.pid
+
+trap 'sigterm_' SIGTERM
+trap 'sigint_' SIGINT
+trap 'term' SIGQUIT
+trap 'term' SIGTERM
+
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
