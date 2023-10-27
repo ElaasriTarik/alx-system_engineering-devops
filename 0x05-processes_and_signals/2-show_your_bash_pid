@@ -2,5 +2,4 @@
 
 # shellcheck disable=SC2009
 # show my bash PID
-ps aux | awk "/bash/"
-
+ps aux | grep "bash"
