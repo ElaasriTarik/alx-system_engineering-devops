@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# listening on a port
+
+sudonc -l -p 98 -k
