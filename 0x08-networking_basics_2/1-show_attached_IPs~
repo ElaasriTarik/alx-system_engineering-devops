@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# print IPv4 IPs
+
+netstat -tuln
