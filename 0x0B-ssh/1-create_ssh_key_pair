@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# creating an RSA
+
+ssh-keygen -b 4096 -P betty -f school
