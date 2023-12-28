@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# edit the ssh config file to connect without using password
+
+Host server_a
+    Hostname 52.86.221.178
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
