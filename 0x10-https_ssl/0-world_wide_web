@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2086
 # show info about subdomains
 
 fetch()
 {
     domain="$1"
     subd="$2"
-    dig "$subd.$domain" | awk -F " " '/^[A-Za-z]/' | awk '{print "The subdomain " substr($1, 1, index($1, ".") - 1) " is a " $4 " record and points to " $5}'
+    dig "$subd.$domain" | awk -F " " '/^[A-Za-z]/' | awk '{print "The subdomain", substr($1, 1, index($1, ".") - 1), "is a", $4, "record and points to", $5}'
     #echo -n "$subd "  # Print $subd without a newline
 }
 
