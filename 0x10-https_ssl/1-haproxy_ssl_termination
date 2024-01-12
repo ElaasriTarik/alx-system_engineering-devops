@@ -1,0 +1,26 @@
+global
+	daemon
+	maxconn 2048
+
+defaults
+	mode tcp
+	log global
+	option log-level debug
+
+	listen https *:443
+	bind *:443 ssl crt /etc/letsencrypt/live/your_domain/fullchain.pem key /etc/letsencrypt/live/your_domain/privkey.pem
+	mode http
+	server web
+	balance roundrobin
+	option httpchk GET /
+	reqadd X-Forwarded-Proto https
+	reqadd X-Real-IP %cli_addr%
+	default_server web2
+
+frontend http *:80
+	 mode  http
+	 redirect server https *:443 if { ssl_fc }
+
+server web2
+       listen *:80
+       address web-server 80
