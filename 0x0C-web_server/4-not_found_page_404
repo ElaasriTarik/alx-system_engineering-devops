@@ -38,5 +38,6 @@ http {
 }
 " > /etc/nginx/nginx.conf
 
+ufw allow 'Nginx HTTP'
 service nginx restart
 nginx -s reload

@@ -2,6 +2,8 @@
 # Install nginx
 
 apt -y update ; apt -y upgrade ; apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.html
+ufw allow "Nginx HTTP"
 
 echo "server {
     listen 80;
