@@ -18,6 +18,10 @@ http {
         listen 80;
         server_name 127.0.0.1;
 
+	location /xyz {
+            return 404;
+        }
+
         location /xyzfoo {
             return 404 'Ceci n\'est pas une page\n\n';
         }
