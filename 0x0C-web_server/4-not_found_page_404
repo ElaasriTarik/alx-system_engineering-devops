@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Install nginx
+
+apt -y update ; apt -y upgrade ; apt-get -y install nginx
+
+echo "server {
+    listen 80;
+    server_name 54.236.24.25;
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
+    location /xyzfoo {
+        return 404 'Ceci n'\''est pas une page';
+    }
+}" > /etc/nginx/sites-available/default
+
+
+service nginx restart
