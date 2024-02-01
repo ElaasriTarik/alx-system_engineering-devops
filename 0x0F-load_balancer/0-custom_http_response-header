@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # HTTP header response
-apt-get -y update
-apt-get -y install nginx
+apt-get -y update ; apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 
 hostname=$(hostname)
@@ -10,13 +9,12 @@ echo "events {}
 http {
 server {
        listen 80 default_server;
-
-       add_header X-Served-By $hostname;
-
-}
+       
+       location / {
+       	    add_header X-Served-By $hostname;
+	}
+    }
 }
 " > /etc/nginx/nginx.conf;
 
-
-service nginx start
-nginx -s reload;
+service nginx restart
