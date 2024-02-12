@@ -1,3 +1,5 @@
+sudo apt-get install ufw
+sudo ufw enable
 ufw default allow outgoing
 ufw default deny incoming
 ufw allow ssh
