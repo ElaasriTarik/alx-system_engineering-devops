@@ -7,4 +7,6 @@ sed -i 's/^user .*/user nginx;/' /etc/nginx/nginx.conf
 
 if sudo nginx -t; then
     sudo service nginx reload
+else
+    echo "Nginx configuration test failed"
 fi
