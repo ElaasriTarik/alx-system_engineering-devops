@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# run a command as a specific user
+
+user=$1
+if [ "$#" -eq 0 ] then;
+    user="root"
+fi
+sudo -u "$user" whoami
