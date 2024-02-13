@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# run nginx as nginx
+sed -i '1s/#user www-data;/user nginx;/' /etc/nginx/nginx.conf
+sed -i '/^http {/a \\nserver {\\nlisten 8080 default_server;\
+        }' '/etc/nginx/nginx.conf'
+sudo nginx -s reload
