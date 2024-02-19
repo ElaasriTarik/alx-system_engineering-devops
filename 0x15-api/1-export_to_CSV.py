@@ -28,4 +28,6 @@ if __name__ == "__main__":
             user = response.get("username")
             status = task.get("completed")
             title = task.get("title")
-            writer.writerow(['"{}"'.format(ele) for ele in [userid, user, status, title]])
+            data = [userid, user, status, title]
+            writer.writerow(['"{}"'
+                             .format(ele) for ele in data])
