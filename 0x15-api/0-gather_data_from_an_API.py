@@ -22,4 +22,4 @@ if __name__ == "__main__":
     for task in all_tasks:
         if task.get("completed") is True:
             title = task.get("title")
-            print(f"\t{title}")
+            print(f"\t {title}")
