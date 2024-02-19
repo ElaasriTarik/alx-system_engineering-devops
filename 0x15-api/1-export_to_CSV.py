@@ -20,12 +20,12 @@ if __name__ == "__main__":
             if task.get("completed") is True:
                 num += 1
     filename = str(userid) + ".csv"
-    with open(filename, "w") as file:
+    with open(filename, "w", encoding='utf-8') as file:
         pass
     for task in all_tasks:
         with open(filename, "a", newline='') as f:
-            writer = csv.writer(f)
+            writer = csv.writer(f, quotechar="'")
             user = response.get("username")
             status = task.get("completed")
             title = task.get("title")
-            writer.writerow([str(userid), str(user), str(status), str(title)])
+            writer.writerow(['"{}"'.format(ele) for ele in [userid, user, status, title]])
