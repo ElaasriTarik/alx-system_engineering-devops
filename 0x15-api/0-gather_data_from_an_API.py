@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""fetch employees data from api"""
 import requests
 import sys
+
 
 all_tasks = []
 num = 0
