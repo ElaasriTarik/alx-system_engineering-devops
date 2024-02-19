@@ -19,10 +19,12 @@ if __name__ == "__main__":
             all_tasks.append(task)
             if task.get("completed") is True:
                 num += 1
+    with open("USER_ID.csv", "w") as file:
+        pass
     for task in all_tasks:
         with open("USER_ID.csv", "a", newline='') as f:
             writer = csv.writer(f)
             user = response.get("username")
             status = task.get("completed")
             title = task.get("title")
-            writer.writerow([userid, user, status, title])
+            writer.writerow([str(userid), str(user), str(status), str(title)])
