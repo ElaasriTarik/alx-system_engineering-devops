@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
 """number_of_subscribers"""
+import requests
 
 
 def number_of_subscribers(subreddit):
     """get number of subscribers to a certain
     subreddit """
-
-    import requests
 
     url = "https://oauth.reddit.com/r/{}/about.json".format(subreddit)
     headers = {'User-Agent':
