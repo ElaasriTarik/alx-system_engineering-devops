@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-import requests
+"""subs"""
 
 
 def number_of_subscribers(subreddit):
     """
     Get the number of subscribers to a certain subreddit.
     """
+    
+    import requests
+
     url = "https://oauth.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
         'User-Agent': 'script:subscriber_counter_v0.1 by /u/tarekElaasri'
