@@ -1,15 +1,17 @@
 #!/usr/bin/python3
+import requests
 
 """number_of_subscribers"""
 
 
 def number_of_subscribers(subreddit):
-    """get number of subscribers to a certain subreddit """
+    """get number of subscribers to a certain
+    subreddit """
 
-    import requests
     url = "https://oauth.reddit.com/r/{}/about.json".format(subreddit)
     headers = {'User-Agent':
-               'script:subscriber_counter_v0.1 by /u/tarekElaasri'}
+               'script:subscriber_counter_v0.1 by /u/tarekElaasri'
+               }
     res = requests.get(url, headers=headers, allow_redirects=False)
 
     if res.status_code == 200:
