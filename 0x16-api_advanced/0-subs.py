@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 import requests
-from requests import *
+
+
 """number_of_subscribers"""
 
 
 def number_of_subscribers(subreddit):
     """get number of subscribers to a certain subreddit """
+
     client_id = "PpEfMsSxFbxQHsIMzr5faQ"
     client_secret = "8yTk0bJrYf78NPzdONjt1zWRmYo8SQ"
     r_usr = "tarekElaasri"
