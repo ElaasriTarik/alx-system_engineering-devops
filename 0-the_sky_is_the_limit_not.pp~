@@ -1,0 +1,24 @@
+events {}
+http {
+     keepalive_timeout 30s;
+     worker_processes auto;
+     client_body_buffer_size 8k;
+    client_header_buffer_size 1k;
+    proxy_buffer_size 16k;
+    proxy_buffers 4 16k;
+    proxy_busy_buffers_size 32k;
+    upstream backend_servers {
+    server 54.157.137.104;
+    server 54.84.181.41;
+}
+    server {
+    	   listen 80 default_server;
+    	   listen [::]:80 default_server;
+
+    	   location /hbnb_static {
+           	    alias /data/web_static/current;
+           	    index index.html;
+    	   }
+
+}
+}
